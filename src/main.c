@@ -51,6 +51,7 @@ int nf_initWindow(window *win, const char *fileToRender) {
     printf("%c", obj[i]);
   }
   printf("\n");
+
 #endif // !DEBUG
 
   free(obj);

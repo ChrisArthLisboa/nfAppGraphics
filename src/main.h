@@ -16,11 +16,6 @@
 
 int nf_initWindow(window *win, const char *fileToRender);
 
-int parseHTML(
-  const char *html, // For now
-  bgfObject *obj
-);
-
 int nf_closeWindow(window *win);
 
 #endif

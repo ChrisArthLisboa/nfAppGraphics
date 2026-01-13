@@ -1,14 +1,19 @@
 
 #include "nfBRR.h"
-#include "main.h"
 #include "nfDef.h"
-#include "nfGGI.h"
 
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+// head
+// body
+// p
+// input
+// div
+// img
+// audio
 int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr) {
   int objSize = 3; // 2 for size + 1 for type
   

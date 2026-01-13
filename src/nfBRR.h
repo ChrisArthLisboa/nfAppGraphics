@@ -12,6 +12,7 @@
 #include "nfDef.h"
 #include <stdio.h>
 
+// temporary
 int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr);
 
 int renderBGFObj(bgfObject *obj, window *win);

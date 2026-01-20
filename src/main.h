@@ -14,8 +14,10 @@
 
 #include "nfDef.h"
 
-int nf_initWindow(window *win, const char *fileToRender);
+int nf_g_initWindow(nf_g_window *win);
 
-int nf_closeWindow(window *win);
+int nf_g_renderWindow(nf_g_window *win, const char *fileToRender);
+
+int nf_g_closeWindow(nf_g_window *win);
 
 #endif

@@ -13,10 +13,12 @@
 #define nfGGI_H
 
 #include "main.h"
+#include "nfDef.h"
 
-window startWindow(const char *winTitle, int width, int height);
+void nf_g_startWindow(nf_g_window *win, const char *winTitle, int width, int height);
 
-int drawToWindow(window *win, void *obj);
+int nf_g_drawToWindow(nf_g_window *win, void *obj);
 
+int nf_g_closeWindow(nf_g_window *win);
 
 #endif // nfGGI_H

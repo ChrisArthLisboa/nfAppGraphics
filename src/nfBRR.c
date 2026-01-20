@@ -14,7 +14,11 @@
 // div
 // img
 // audio
-int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr) {
+int nf_g_parseHTML(
+  const char *html,
+  unsigned int htmlSize,
+  nf_g_bgfObject *objPtr
+) {
   int objSize = 3; // 2 for size + 1 for type
   
   uint8_t tagSize = 0;
@@ -28,12 +32,12 @@ int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr) {
 
   objSize += htmlSize;
   
-  *objPtr = (bgfObject) malloc(objSize);
+  *objPtr = (nf_g_bgfObject) malloc(objSize);
   if (!*objPtr) {
-    return nf_FailCreateObj;
+    return nf_g_FAILCREATEOBJ;
   }
 
-  bgfObject obj = *objPtr;
+  nf_g_bgfObject obj = *objPtr;
   memset(obj, 0, objSize);
 
   memcpy(obj, &objSize, sizeof(uint16_t));
@@ -49,10 +53,10 @@ int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr) {
   }
 
   memcpy(obj+3, html+tagSize, objSize-3);
-  return nf_Ok;
+  return nf_g_OK;
 }
 
-int renderBGFFile(FILE *filePointer, window *win) {
+int nf_g_renderBGFFile(FILE *filePointer, nf_g_window *win) {
   
-  return nf_NotImplemented;
+  return nf_g_NOTIMPLEMENTED;
 }

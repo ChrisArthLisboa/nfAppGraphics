@@ -13,11 +13,11 @@
 #include <stdio.h>
 
 // temporary
-int parseHTML(const char *html, unsigned int htmlSize, bgfObject *objPtr);
+int nf_g_parseHTML(const char *html, unsigned int htmlSize, nf_g_bgfObject *objPtr);
 
-int renderBGFObj(bgfObject *obj, window *win);
+int nf_g_renderBGFObj(nf_g_bgfObject *obj, nf_g_window *win);
 
-int renderBGFFile(FILE *filePointer, window *win);
+int nf_g_renderBGFFile(FILE *filePointer, nf_g_window *win);
 
 #endif // !nfBgfRenderer_H
 

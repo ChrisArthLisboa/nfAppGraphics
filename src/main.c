@@ -6,31 +6,45 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define DEBUG
 
 
-int nf_initWindow(window *win, const char *fileToRender) {
-  int err;
+int nf_g_initWindow(nf_g_window *win) {
 
-  FILE *filePointer = fopen(fileToRender, "r+");
-  if (filePointer == NULL) {
-    return nf_FileNotFound;
+  nf_g_startWindow(win, "Test window", 800, 600);
+  if (*win == NULL) {
+    fprintf(stderr, "ErrorMsg: in step nf_g_startWindow at line 18");
+    return nf_g_FAILSTARTWINDOW;
   }
 
-  // *win = startWindow("Test window", 800, 600);
-  // if (*win == NULL) {
-  //   printf("win Error");
-  //   return nf_FailStartWindow;
-  // }
+  return nf_g_OK;
+}
 
-  bgfObject obj;
+int nf_g_renderWindow(nf_g_window *win, const char *fileToRender) {
+  int err;
+  
+  FILE *filePointer = fopen(fileToRender, "r+");
+  if (filePointer == NULL) {
+    fprintf(stderr, "ErrorMsg: in step nf_g_renderWindow at line 27");
+    return nf_g_FILENOTFOUND;
+  }
 
-  err = parseHTML("<p>test</p>", sizeof("<p>test</p>"), &obj);
-  if (err != nf_Ok) {
-    printf("Failed creating BGF obj");
+  err = nf_g_renderBGFFile(filePointer, win);
+  if (err != nf_g_OK) {
+    fclose(filePointer);
+    fprintf(stderr, "ErrorMsg: in step nf_g_renderBGFFile at line 36 | ErrorCode: %d", err);
+    return err;
+  }
+
+  nf_g_bgfObject obj;
+
+  err = nf_g_parseHTML("<p>test</p>", sizeof("<p>test</p>"), &obj);
+  if (err != nf_g_OK) {
+    fprintf(stderr, "ErrorMsg: in step nf_g_parseHTML at line 38 | ErrorCode: %d", err);
     fclose(filePointer);
     return err;
   }
@@ -56,5 +70,5 @@ int nf_initWindow(window *win, const char *fileToRender) {
 
   free(obj);
   fclose(filePointer);
-  return nf_Ok;
+  return nf_g_OK;
 }

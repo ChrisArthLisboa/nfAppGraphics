@@ -2,19 +2,18 @@
 #include "../nfDef.h"
 #include "../nfGGI.h"
 
-#include <stdlib.h>
-
-window startWindow(
+void nf_g_startWindow(
+  nf_g_window *win,
   const char *winTitle,
   int width,
   int height
 ) {
 
-  return NULL;
+  return;
 }
 
-int drawToWindow(window *win, void *obj) {
+int drawToWindow(nf_g_window *win, void *obj) {
   
 
-  return nf_Ok;
+  return nf_g_OK;
 }

@@ -6,16 +6,16 @@
 #define nfAGDefinitions_H
 
 #include <stdint.h>
-enum nf_AG_ErrorCodes {
-  nf_Ok,
-  nf_FileNotFound,
-  nf_FailCreateObj, // maybe create have a bin segment and the line that broke
-  nf_FailRenderingObj,
-  nf_FailStartWindow,
-  nf_NotImplemented
+enum nf_g_ErrorCodes {
+  nf_g_OK,
+  nf_g_FILENOTFOUND,
+  nf_g_FAILCREATEOBJ, // maybe create have a bin segment and the line that broke
+  nf_g_FAILRENDERINGOBJ,
+  nf_g_FAILSTARTWINDOW,
+  nf_g_NOTIMPLEMENTED
 };
 
-typedef uint8_t *window;
+typedef uint8_t *nf_g_window;
 
 /**
  * Specifications:
@@ -23,6 +23,6 @@ typedef uint8_t *window;
  *  byte 2 = type of the object
  *  rest = whats inside the object (please be only text)
  */
-typedef uint8_t *bgfObject;
+typedef uint8_t *nf_g_bgfObject;
 
 #endif // !nfAGDefinitions_H

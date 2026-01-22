@@ -14,7 +14,7 @@
 // div
 // img
 // audio
-int nf_g_parseHTML(
+nf_g_errors nf_g_parseHTML(
   const char *html,
   unsigned int htmlSize,
   nf_g_bgfObject *objPtr
@@ -56,7 +56,7 @@ int nf_g_parseHTML(
   return nf_g_OK;
 }
 
-int nf_g_renderBGFFile(FILE *filePointer, nf_g_window *win) {
+nf_g_errors nf_g_renderBGFFile(FILE *filePointer, nf_g_window *win) {
   
   return nf_g_NOTIMPLEMENTED;
 }

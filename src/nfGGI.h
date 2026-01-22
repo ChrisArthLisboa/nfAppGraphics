@@ -19,6 +19,6 @@ void nf_g_startWindow(nf_g_window *win, const char *winTitle, int width, int hei
 
 int nf_g_drawToWindow(nf_g_window *win, void *obj);
 
-int nf_g_closeWindow(nf_g_window *win);
+void nf_g_closeWindow(nf_g_window *win);
 
 #endif // nfGGI_H

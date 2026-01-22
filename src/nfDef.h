@@ -6,14 +6,14 @@
 #define nfAGDefinitions_H
 
 #include <stdint.h>
-enum nf_g_ErrorCodes {
+typedef enum nf_g_ErrorCodes {
   nf_g_OK,
   nf_g_FILENOTFOUND,
   nf_g_FAILCREATEOBJ, // maybe create have a bin segment and the line that broke
   nf_g_FAILRENDERINGOBJ,
   nf_g_FAILSTARTWINDOW,
   nf_g_NOTIMPLEMENTED
-};
+} nf_g_errors;
 
 typedef uint8_t *nf_g_window;
 

@@ -12,8 +12,12 @@ void nf_g_startWindow(
   return;
 }
 
-int drawToWindow(nf_g_window *win, void *obj) {
+int nf_g_drawToWindow(nf_g_window *win, void *obj) {
   
 
   return nf_g_OK;
+}
+
+void nf_g_closeWindow(nf_g_window *win) {
+  
 }

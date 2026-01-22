@@ -41,8 +41,7 @@ int nf_g_drawToWindow(nf_g_window *win, void *obj) {
   return nf_g_OK;
 }
 
-int nf_g_closeWindow(nf_g_window *win) {
+void nf_g_closeWindow(nf_g_window *win) {
 
   free(win);
-  return nf_g_OK;
 }

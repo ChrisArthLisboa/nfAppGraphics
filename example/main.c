@@ -19,4 +19,5 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  nf_g_finalizeWindow(&win);
 }
